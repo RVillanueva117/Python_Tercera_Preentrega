@@ -1,0 +1,28 @@
+{% extends "padre.html" %}
+
+{% block contenido %}
+<div class="container mt-5">
+    <h2>Cursos encontrados</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Camada</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for curso in cursos %}
+            <tr>
+                <td>{{ curso.id }}</td>
+                <td>{{ curso.nombre }}</td>
+                <td>{{ curso.camada }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'inicio' %}" class="btn btn-secondary mt-3">
+        <i class="bi bi-arrow-left-circle"></i> Volver al inicio
+    </a>
+</div>
+{% endblock %}

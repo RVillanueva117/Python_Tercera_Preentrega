@@ -1,0 +1,21 @@
+
+{% extends "padre.html" %}
+
+{% block contenido %}
+<div class="container mt-4">
+    <h2>Resultado de la búsqueda</h2>
+
+    {% if alumno %}
+        <p><strong>Nombre:</strong> {{ alumno.nombre }}</p>
+        <p><strong>Apellido:</strong> {{ alumno.apellido }}</p>
+        <p><strong>Documento:</strong> {{ alumno.documento }}</p>
+        <p><strong>Email:</strong> {{ alumno.email }}</p>
+    {% else %}
+        <div class="alert alert-warning">
+            No se encontró ningún alumno con el documento "{{ documento }}".
+        </div>
+    {% endif %}
+
+    <a href="{% url 'buscar_alumno' %}" class="btn btn-primary">Volver a buscar</a>
+    <a href="{% url 'inicio' %}" class="btn btn-secondary">Volver al inicio</a>
+{% endblock %}

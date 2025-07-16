@@ -1,0 +1,34 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenido %}
+<h2 class="text-center my-4">Contacto</h2>
+
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Escribí tu mensaje aquí..." required></textarea>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">
+                <i class="bi bi-send"></i> Enviar
+            </button>
+        
+            <a href="{% url 'inicio' %}" class="btn btn-secondary">
+            <i class="bi bi-arrow-left-circle"></i> Volver al inicio
+                </div>
+    </form>
+    </div>
+
+
+
+{% endblock %}

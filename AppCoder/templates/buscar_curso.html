@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+
+{% block contenido %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4">Buscar curso por nombre</h2>
+            <form action="{% url 'buscar_curso' %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre del curso:</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ej: Python">
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-search"></i> Buscar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

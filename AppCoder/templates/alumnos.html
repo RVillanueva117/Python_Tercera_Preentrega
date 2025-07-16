@@ -1,0 +1,47 @@
+{% extends "padre.html" %}
+
+
+{% block contenido %}
+<h2>Listado de alumnos</h2>
+<div class="container">
+    <div class="text-center my-4">
+    <a class="btn btn-primary me-3" href="{% url 'buscar_alumno' %}">
+        <i class="bi bi-search"></i> Buscar alumno
+    </a>
+    <a class="btn btn-success" href="{% url 'alta_alumno' %}">
+        <i class="bi bi-person-plus"></i> Nuevo alumno
+    </a>
+</div>
+
+    <table class="table table-striped">
+        <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Documento</th>
+            <th>Fecha de nacimiento</th>
+            <th>Email</th>
+            <th>Edad</th>
+        </tr>
+
+        {% for alumno in alumnos %}
+        <tr>
+            <td>{{ alumno.id }}</td>
+            <td>{{ alumno.nombre }}</td>
+            <td>{{ alumno.apellido }}</td>
+            <td>{{ alumno.documento }}</td>
+            <td>{{ alumno.fecha_nacimiento }}</td>
+            <td>{{ alumno.email }}</td>
+            <td>{{ alumno.edad }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+<div class="text-center mt-4">
+    <a href="{% url 'inicio' %}" class="btn btn-secondary">
+        <i class="bi bi-arrow-left-circle"></i> Volver al inicio </a>
+</div>
+{% endblock %}
+

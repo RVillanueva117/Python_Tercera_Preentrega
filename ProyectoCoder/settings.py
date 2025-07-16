@@ -50,12 +50,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Clase18.urls'
+ROOT_URLCONF = 'ProyectoCoder.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["C:/Users/Dell/Desktop/Diplomatura Data Science/10. Python/Py/Clase18/AppCoder/template/"],
+        'DIRS': ["C:/Users/Dell/Desktop/Diplomatura Data Science/10. Python/Py/Python_Tercera_Preentrega_Rodrigo_Villanueva/AppCoder/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Clase18.wsgi.application'
+WSGI_APPLICATION = 'ProyectoCoder.wsgi.application'
 
 
 # Database

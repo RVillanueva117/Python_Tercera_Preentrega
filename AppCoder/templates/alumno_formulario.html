@@ -1,0 +1,38 @@
+{% extends "padre.html" %}
+
+{% block contenido %}
+<div class="container mt-4">
+    <h2>Nuevo alumno</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" name="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" name="apellido" required>
+        </div>
+        <div class="mb-3">
+            <label for="documento">Documento:</label>
+            <input type="text" class="form-control" name="documento" required>
+        </div>
+        <div class="mb-3">
+            <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+            <input type="date" class="form-control" name="fecha_nacimiento">
+        </div>
+        <div class="mb-3">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="edad">Edad:</label>
+            <input type="number" class="form-control" name="edad">
+        </div>
+        <button type="submit" class="btn btn-success">Guardar alumno</button>
+        <a href="{% url 'inicio' %}" class="btn btn-secondary ms-2">
+            <i class="bi bi-arrow-left-circle"></i> Volver al inicio
+        </a>
+    </form>
+</div>
+{% endblock %}

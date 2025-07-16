@@ -1,0 +1,23 @@
+{% extends "padre.html" %}
+
+{% block contenido %}
+<div class="container mt-4">
+    <h2>Resultado de la búsqueda</h2>
+
+    {% if profesores %}
+        <ul class="list-group mb-4">
+            {% for profesor in profesores %}
+                <li class="list-group-item">
+                    {{ profesor.nombre }} {{ profesor.apellido }} - {{ profesor.email }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="alert alert-warning">No se encontraron profesores.</div>
+    {% endif %}
+
+    <a href="{% url 'inicio' %}" class="btn btn-secondary">
+        <i class="bi bi-arrow-left-circle"></i> Volver al inicio
+    </a>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "padre.html" %}
+
+{% block contenido %}
+<div class="container mt-4">
+    <h2>Buscar profesor por apellido</h2>
+    <form action="{% url 'buscar_profesor' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" name="apellido" id="apellido" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+    </form>
+</div>
+{% endblock %}

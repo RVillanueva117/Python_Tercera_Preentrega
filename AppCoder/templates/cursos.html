@@ -1,0 +1,44 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenido %}
+<h2>Listado de cursos</h2>
+
+<div class="container">
+    <div class="text-center my-4">
+        <a class="btn btn-primary me-3" href="{% url 'buscar_curso' %}">
+            <i class="bi bi-search"></i> Buscar curso
+        </a>
+        <a class="btn btn-success" href="{% url 'alta_curso' %}">
+            <i class="bi bi-plus-circle"></i> Nuevo curso
+        </a>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Camada</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for curso in cursos %}
+            <tr>
+                <td>{{ curso.id }}</td>
+                <td>{{ curso.nombre }}</td>
+                <td>{{ curso.camada }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+  <div class="text-center mt-4">
+    <a href="{% url 'inicio' %}" class="btn btn-secondary">
+        <i class="bi bi-arrow-left-circle"></i> Volver al inicio
+    </a>
+    </div>
+</div>
+
+{% endblock %}

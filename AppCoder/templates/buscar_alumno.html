@@ -1,0 +1,20 @@
+{% extends "padre.html" %}
+
+{% block contenido %}
+<div class="container mt-4">
+    <h2>Buscar alumno por documento</h2>
+
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="documento">Documento:</label>
+            <input type="text" class="form-control" name="documento" placeholder="Ej: 12345678" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+    </form>
+</div>
+{% endblock %}
